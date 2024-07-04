@@ -10,6 +10,7 @@ Usage: python sync_previous_module.py <source_dir_name> <dest_dir_name>
 
 Ex:  python sync_previous_module.py mle-module-0-sauravpanda24 mle-module-1-sauravpanda24
 """
+
 import os
 import shutil
 import sys
@@ -44,7 +45,7 @@ try:
             os.path.join(grandparent_path, dest, file),
         )
     print(f"Finished moving {len(files_to_move)} files")
-except Exception as e:
+except Exception:
     print(
         "Something went wrong! please check if the source and destination folders are present in same folder"
     )

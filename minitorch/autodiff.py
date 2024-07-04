@@ -1,5 +1,5 @@
 from dataclasses import dataclass
-from typing import Any, Iterable, List, Tuple
+from typing import Any, Iterable, Tuple
 
 from typing_extensions import Protocol
 
@@ -23,7 +23,16 @@ def central_difference(f: Any, *vals: Any, arg: int = 0, epsilon: float = 1e-6) 
         An approximation of $f'_i(x_0, \ldots, x_{n-1})$
     """
     # TODO: Implement for Task 1.1.
-    raise NotImplementedError("Need to implement for Task 1.1")
+    # slope = (f(x_i + epsilon) - f(x_i - epsilon)) / (2 * epsilon)
+    vals_list = list(vals)
+    x_i = vals_list[arg]
+    vals_list[arg] = x_i + epsilon
+    f_plus = f(*vals_list)
+    vals_list[arg] = x_i - epsilon
+    f_minus = f(*vals_list)
+    slope = (f_plus - f_minus) / (2 * epsilon)
+    return slope
+    # raise NotImplementedError("Need to implement for Task 1.1")
 
 
 variable_count = 1
