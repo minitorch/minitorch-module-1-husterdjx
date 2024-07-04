@@ -89,6 +89,7 @@ class MathTest(Generic[A]):
 
     @staticmethod
     def gt2(a: A, b: A) -> A:
+        # print("[MathTest] a, b:", a, b, "result:", operators.lt(b, a + 1.2))
         return operators.lt(b, a + 1.2)
 
     @staticmethod
@@ -202,6 +203,7 @@ class MathTestVariable(MathTest):
 
     @staticmethod
     def gt2(a, b):
+        # print("[MathTestVariable] a, b:", a, b, "result:", a + 1.2 > b, "a+1.2", a + 1.2)
         return a + 1.2 > b
 
     @staticmethod
