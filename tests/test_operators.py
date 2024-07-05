@@ -5,7 +5,7 @@ from hypothesis import given
 from hypothesis.strategies import lists
 
 from minitorch import MathTest
-from minitorch.operators import (
+from minitorch.operators import (  # sigmoid,
     add,
     addLists,
     eq,
@@ -21,7 +21,6 @@ from minitorch.operators import (
     prod,
     relu,
     relu_back,
-    sigmoid,
     sum,
 )
 
